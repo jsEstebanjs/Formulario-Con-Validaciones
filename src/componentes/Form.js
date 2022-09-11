@@ -60,8 +60,16 @@ const Form = ()=>{
                     <option value='female'>Female</option>
                 </select>
 
+                <div className='container-terms'>
+                <label htmlFor='terms'>Terms and Conditions</label>
+                <input className={errors.password?'red':null} type='checkbox' id='terms' {...register('terms',{
+                    required:true,
+                })}/>
+                </div>
+                {errors.terms?.type === 'required' && <p>Accept the terms and conditions</p>}
+
                 <input type='submit' value='Create User'className='btn-sent'/>
-                
+
             </form>
         </div>
     )
