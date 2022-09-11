@@ -10,6 +10,7 @@ const Form = ()=>{
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
+
                 <label htmlFor='name'>Full name</label>
                 <input className={errors.name?'red':null} type='text' name='' id='name' placeholder='Your name' {...register('name',{
                     required:true,
@@ -21,6 +22,7 @@ const Form = ()=>{
                 {errors.name?.type === 'pattern' && <p>invalid name(the first letter must be capitalized)</p>}
                 {errors.name?.type === 'minLength' && <p>minimum length 10</p>}
                 {errors.name?.type === 'maxLength' && <p>maximum length 30</p>}
+
                 <label htmlFor='age'>Age</label>
                 <input className={errors.age?'red':null} type='number' name='' id='age' placeholder='Your age' {...register('age',{
                     required:true,
@@ -58,8 +60,8 @@ const Form = ()=>{
                     <option value='female'>Female</option>
                 </select>
 
-
                 <input type='submit' value='Create User'className='btn-sent'/>
+                
             </form>
         </div>
     )
